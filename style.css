@@ -4,13 +4,13 @@
 
 /* Reset básico */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html,body { height:100%; font-family: 'Inter', Arial, sans-serif; color:#153b2a; background:#f6fffa; }
+html,body { height:100%; font-family: 'Inter', Arial, sans-serif; color:black; background:#f6fffa; }
 
 /* Layout */
 .container { width: min(1100px, 92%); margin: 0 auto; padding: 24px 0; }
 
 /* Top header */
-.topbar { background: #e6fff0; padding: 6px 12px; font-size: 14px; display:flex; justify-content:space-between; color:#0b5a3b; }
+.topbar { background: #e6fff0; padding: 6px 12px; font-size: 14px; display:flex; justify-content:space-between; color:black; }
 .brand { display:flex; align-items:center; padding: 18px 12px; gap: 16px; background: linear-gradient(90deg,#eafff0,#ccfbe9); }
 .logo svg { border-radius:8px; }
 .brand-text h1 { font-size: 32px; line-height:1; color:#0b5a3b; letter-spacing:1px; }
@@ -18,7 +18,7 @@ html,body { height:100%; font-family: 'Inter', Arial, sans-serif; color:#153b2a;
 
 /* Nav */
 .main-nav { display:flex; gap:14px; padding: 12px; background:#ccfbe9; justify-content:center; }
-.main-nav a { color:#0b5a3b; text-decoration:none; padding:8px 10px; font-weight:600; border-radius:6px; }
+.main-nav a { color:black; text-decoration:none; padding:8px 10px; font-weight:600; border-radius:6px; }
 .main-nav a.cta { background:#0b8b56; color:white; padding:8px 14px; }
 
 /* Panels */
@@ -26,8 +26,8 @@ html,body { height:100%; font-family: 'Inter', Arial, sans-serif; color:#153b2a;
 .panel.alt { background: linear-gradient(180deg,#f7fff8,#f2fff6); }
 
 /* Headings */
-h2 { font-size: 26px; color:#0b4f33; margin-bottom:12px; }
-.lead { font-size:16px; color:#1f5b44; margin-bottom:12px; }
+h2 { font-size: 26px; color:black; margin-bottom:12px; }
+.lead { font-size:16px; color:black; margin-bottom:12px; }
 
 /* two-column layout */
 .two-col { display:flex; gap:30px; margin-top:12px; }
@@ -67,3 +67,4 @@ h2 { font-size: 26px; color:#0b4f33; margin-bottom:12px; }
   .brand-text h1 { font-size:22px; }
   .main-nav { flex-wrap:wrap; gap:8px; }
 }
+
