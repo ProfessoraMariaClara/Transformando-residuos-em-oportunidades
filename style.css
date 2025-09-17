@@ -1,70 +1,185 @@
-/* style.css - Sustentec site
-   Comentários: estilo simples, responsivo e legível para apresentação em datashow.
-*/
+/* ==================================================
+   style.css - Sustentec site (com paleta revisada)
+   Comentários em português
+   ================================================== */
 
 /* Reset básico */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html,body { height:100%; font-family: 'Inter', Arial, sans-serif; color:black; background:#f6fffa; }
+html,body { 
+  height:100%; 
+  font-family: 'Inter', Arial, sans-serif; 
+  color:#333; 
+  background:#ffffff; 
+}
 
-/* Layout */
-.container { width: min(1100px, 92%); margin: 0 auto; padding: 24px 0; }
+/* Container centralizado */
+.container { 
+  width: min(1100px, 92%); 
+  margin: 0 auto; 
+  padding: 24px 0; 
+}
 
-/* Top header */
-.topbar { background: #e6fff0; padding: 6px 12px; font-size: 14px; display:flex; justify-content:space-between; color:black; }
-.brand { display:flex; align-items:center; padding: 18px 12px; gap: 16px; background: linear-gradient(90deg,#eafff0,#ccfbe9); }
+/* Topo superior (barra pequena acima do menu) */
+.topbar { 
+  background: #f9f9f9; 
+  padding: 6px 12px; 
+  font-size: 14px; 
+  display:flex; 
+  justify-content:space-between; 
+  color:#333; 
+}
+
+/* Marca (logo + nome do site) */
+.brand { 
+  display:flex; 
+  align-items:center; 
+  padding: 18px 12px; 
+  gap: 16px; 
+  background: white; 
+  border-bottom: 3px solid #0b8b56; 
+}
 .logo svg { border-radius:8px; }
 .brand-text h1 { font-size: 32px; line-height:1; color:#0b5a3b; letter-spacing:1px; }
-.brand-text .slogan { font-size:14px; color:#0b5a3b; margin-top:6px; }
+.brand-text .slogan { font-size:14px; color:#004d66; margin-top:6px; }
 
-/* Nav */
-.main-nav { display:flex; gap:14px; padding: 12px; background:#ccfbe9; justify-content:center; }
-.main-nav a { color:black; text-decoration:none; padding:8px 10px; font-weight:600; border-radius:6px; }
+/* Navegação principal (menu) */
+.main-nav { 
+  display:flex; 
+  gap:14px; 
+  padding: 12px; 
+  background:white; 
+  justify-content:center; 
+  border-bottom:1px solid #eee; 
+  position: sticky; /* fixa no topo ao rolar */
+  top: 0; 
+  z-index: 1000; 
+}
+.main-nav a { 
+  color:#333; 
+  text-decoration:none; 
+  padding:8px 10px; 
+  font-weight:600; 
+  border-radius:6px; 
+  transition:0.3s; 
+}
+.main-nav a:hover { color:#0b8b56; }
 .main-nav a.cta { background:#0b8b56; color:white; padding:8px 14px; }
+.main-nav a.cta:hover { background:#07603a; }
 
-/* Panels */
-.panel { padding: 28px 0; border-top: 1px solid #eaf7ef; }
-.panel.alt { background: linear-gradient(180deg,#f7fff8,#f2fff6); }
+/* Seções principais (painéis) */
+.panel { 
+  padding: 50px 0; 
+  border-top: 1px solid #f0f0f0; 
+}
+.panel.alt { background: #f9f9f9; } /* alternância de fundo */
 
-/* Headings */
-h2 { font-size: 26px; color:black; margin-bottom:12px; }
-.lead { font-size:16px; color:black; margin-bottom:12px; }
+/* Títulos e textos */
+h2 { font-size: 26px; color:#0b5a3b; margin-bottom:12px; }
+.lead { font-size:16px; color:#333; margin-bottom:12px; line-height:1.6; }
 
-/* two-column layout */
+/* Layout em duas colunas */
 .two-col { display:flex; gap:30px; margin-top:12px; }
 .two-col > div { flex:1; }
 
-/* cards */
-.cards { display:grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap:14px; margin-top:12px; }
-.card { background:#eafff0; border:1px solid #c9efdd; padding:14px; border-radius:8px; }
+/* Cards (caixinhas de destaque) */
+.cards { 
+  display:grid; 
+  grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); 
+  gap:14px; 
+  margin-top:12px; 
+}
+.card { 
+  background:#fff; 
+  border:1px solid #c9efdd; 
+  padding:14px; 
+  border-radius:8px; 
+  transition:0.25s; 
+}
+.card:hover { 
+  transform: translateY(-6px); 
+  box-shadow: 0 6px 14px rgba(0,0,0,.08); 
+}
 
-/* impact */
-.impact-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:12px; margin-top:12px; }
-.impact-item { background:#fff; border-radius:8px; padding:12px; box-shadow:0 1px 4px rgba(0,0,0,.04); }
+/* Impacto (blocos em grade) */
+.impact-grid { 
+  display:grid; 
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); 
+  gap:12px; 
+  margin-top:12px; 
+}
+.impact-item { 
+  background:#fff; 
+  border-radius:8px; 
+  padding:12px; 
+  box-shadow:0 1px 4px rgba(0,0,0,.04); 
+  transition:0.25s; 
+}
+.impact-item:hover { 
+  transform: translateY(-6px); 
+  box-shadow:0 6px 14px rgba(0,0,0,.08); 
+}
 
-/* code block */
-.code-block { background:#0b2b1a; color:#dfffe6; padding:10px; border-radius:6px; font-family: monospace; font-size:13px; }
+/* Blocos de código */
+.code-block { 
+  background:#0b2b1a; 
+  color:#dfffe6; 
+  padding:10px; 
+  border-radius:6px; 
+  font-family: monospace; 
+  font-size:13px; 
+}
 
-/* swot grid */
-.swot-grid { display:grid; grid-template-columns: repeat(2,1fr); gap:10px; margin-top:12px; }
-.swot-item { background:#f0fff6; padding:10px; border-radius:6px; border:1px solid #d5fbe0; }
+/* Grade SWOT */
+.swot-grid { 
+  display:grid; 
+  grid-template-columns: repeat(2,1fr); 
+  gap:10px; 
+  margin-top:12px; 
+}
+.swot-item { 
+  background:#f9f9f9; 
+  padding:10px; 
+  border-radius:6px; 
+  border:1px solid #e0e0e0; 
+}
 
-/* banner sample */
+/* Banner de exemplo (layout em duas áreas) */
 .banner-sample { display:flex; gap:12px; margin-top:12px; }
-.banner-left { flex:2; background:#eafff0; padding:10px; border-radius:6px; }
+.banner-left { flex:2; background:#fff; padding:10px; border-radius:6px; border:1px solid #e0e0e0; }
 .banner-right { flex:1; display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:center; }
 
-/* contact */
+/* Formulário de contato */
 .contact form { display:flex; flex-direction:column; gap:8px; max-width:560px; }
-.contact input, .contact textarea { padding:8px; border-radius:6px; border:1px solid #cfefe0; }
-.btn { background:#0b8b56; color:white; border:none; padding:10px 14px; border-radius:6px; cursor:pointer; font-weight:600; }
+.contact input, .contact textarea { padding:8px; border-radius:6px; border:1px solid #ddd; }
+.btn { 
+  background:#0b8b56; 
+  color:white; 
+  border:none; 
+  padding:10px 14px; 
+  border-radius:8px; 
+  cursor:pointer; 
+  font-weight:600; 
+  transition: background 0.3s, transform 0.2s; 
+  box-shadow:0 3px 6px rgba(0,0,0,.1); 
+}
+.btn:hover { background:#07603a; transform: scale(1.05); }
 
-/* footer */
-.site-footer { background:#e6fff0; padding:16px 0; margin-top:18px; text-align:center; color:#07603a; }
+/* Rodapé */
+.site-footer { 
+  background:#f9f9f9; 
+  padding:16px 0; 
+  margin-top:18px; 
+  text-align:center; 
+  color:#004d66; 
+  font-weight:500; 
+}
 
-/* responsive */
+/* Responsividade para telas menores */
 @media (max-width:880px) {
-  .two-col, .banner-sample, .cards { flex-direction:column; grid-template-columns:1fr; }
+  .two-col, .banner-sample, .cards { 
+    flex-direction:column; 
+    grid-template-columns:1fr; 
+  }
   .brand-text h1 { font-size:22px; }
   .main-nav { flex-wrap:wrap; gap:8px; }
 }
-
