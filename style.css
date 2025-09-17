@@ -66,6 +66,45 @@ html,body {
 .main-nav a.cta { background:#0b8b56; color:white; padding:8px 14px; }
 .main-nav a.cta:hover { background:#07603a; }
 
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 20px 0; /* ajuste conforme seu layout */
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
 /* Seções principais (painéis) */
 .panel { 
   padding: 50px 0; 
@@ -183,3 +222,4 @@ h2 { font-size: 26px; color:#0b5a3b; margin-bottom:12px; }
   .brand-text h1 { font-size:22px; }
   .main-nav { flex-wrap:wrap; gap:8px; }
 }
+
