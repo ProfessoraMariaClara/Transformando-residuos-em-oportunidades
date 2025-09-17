@@ -1,6 +1,4 @@
-// script.js
-// Interatividade mínima: copiar código do protótipo, simular envio do formulário,
-// e destacar a SWOT ao clicar (pequena interação para a apresentação).
+
 
 document.addEventListener('DOMContentLoaded', function() {
   // Botão copiar código de protótipo
@@ -16,12 +14,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  const slide = document.querySelector('.carousel-slide');
+const images = document.querySelectorAll('.carousel-slide img');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let counter = 0;
+const size = images[0].clientWidth;
+
+function updateCarousel() {
+  slide.style.transform = `translateX(${-size * counter}px)`;
+}
+
+// Próximo
+nextBtn.addEventListener('click', () => {
+  counter++;
+  if(counter >= images.length) counter = 0;
+  updateCarousel();
+});
+
+// Anterior
+prevBtn.addEventListener('click', () => {
+  counter--;
+  if(counter < 0) counter = images.length - 1;
+  updateCarousel();
+});
+
+// Autoplay opcional
+setInterval(() => {
+  counter++;
+  if(counter >= images.length) counter = 0;
+  updateCarousel();
+}, 5000);
+
+
   // Formulário de contato (simulado)
   var form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Mensagem simulada enviada — em projeto real, aqui enviaríamos para backend (PHP/MySQL).');
+      alert('Recebemos sua mensagem, em breve entraremos em contato');
       form.reset();
     });
   }
@@ -39,3 +71,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
