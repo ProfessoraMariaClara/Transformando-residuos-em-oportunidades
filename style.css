@@ -63,9 +63,10 @@ html,body {
 
 .carousel-container {
   position: relative;
-  width: 90%;         /* ocupa 90% da tela */
-  max-width: 1200px;  /* largura máxima no PC */
-  margin: 20px auto;  /* centraliza horizontalmente */
+  width: 90%;           /* ocupa 90% da tela */
+  max-width: 1200px;    /* largura máxima no PC */
+  max-height: 500px;    /* limita a altura */
+  margin: 20px auto;    /* centraliza */
   overflow: hidden;
   border-radius: 10px;
 }
@@ -77,7 +78,8 @@ html,body {
 
 .carousel-slide img {
   width: 100%;
-  height: auto;      /* mantém proporção */
+  height: 100%;        /* ocupa toda a altura do container */
+  object-fit: contain;  /* mantém proporção sem cortar a imagem */
   flex-shrink: 0;
 }
 
@@ -102,10 +104,11 @@ html,body {
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Media query para telas pequenas */
+/* Ajustes para telas pequenas */
 @media (max-width: 600px) {
   .carousel-container {
     width: 100%;
+    max-height: 300px;
   }
   
   .prev, .next {
@@ -114,13 +117,12 @@ html,body {
   }
 }
 
-/* Media query para telas muito grandes */
+/* Ajuste para telas muito grandes */
 @media (min-width: 1600px) {
   .carousel-container {
     max-width: 1500px;
   }
 }
-
 
 /* Seções principais (painéis) */
 .panel { 
@@ -239,5 +241,6 @@ h2 { font-size: 26px; color:#0b5a3b; margin-bottom:12px; }
   .brand-text h1 { font-size:22px; }
   .main-nav { flex-wrap:wrap; gap:8px; }
 }
+
 
 
