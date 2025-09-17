@@ -223,13 +223,18 @@ h2 { font-size: 26px; color:#0b5a3b; margin-bottom:12px; }
 .btn:hover { background:#07603a; transform: scale(1.05); }
 
 /* Rodapé */
-.site-footer { 
-  background: black; 
-  padding:16px 0; 
-  margin-top:18px; 
-  text-align:center; 
-  color:white; 
-  font-weight:500; 
+.site-footer {
+  background-color: #111;  /* preto suave */
+  color: #fff;             /* texto branco */
+  text-align: center;      /* centraliza o conteúdo */
+  padding: 24px 20px;      /* espaço interno confortável */
+  margin-top: 40px;        /* separação do conteúdo acima */
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;   /* deixa o texto mais elegante */
+  border-top: 2px solid #444; /* detalhe sutil no topo */
+  border-radius: 8px 8px 0 0; /* cantos superiores levemente arredondados */
 }
 
 /* Responsividade para telas menores */
@@ -241,6 +246,7 @@ h2 { font-size: 26px; color:#0b5a3b; margin-bottom:12px; }
   .brand-text h1 { font-size:22px; }
   .main-nav { flex-wrap:wrap; gap:8px; }
 }
+
 
 
 
